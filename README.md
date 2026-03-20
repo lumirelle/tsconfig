@@ -28,6 +28,8 @@ In order to get better DX and UX, we need to have a good `tsconfig.json` config,
 
 For _TypeScript_ libraries.
 
+For monorepo with TypeScript project references, please refer to [lumirelle/starter-monorepo](https://github.com/lumirelle/starter-monorepo/tree/main/tsconfig.json).
+
 ### [`@lumirelle/tsconfig/vue`](tsconfig.vue.json)
 
 For _Vue_ applications.
