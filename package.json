@@ -36,9 +36,6 @@
       "types": {
         "@types/bun": "^1.3.11"
       },
-      "build": {
-        "bunup": "^0.16.31"
-      },
       "check": {
         "@antfu/eslint-config": "^7.7.3",
         "@arethetypeswrong/cli": "^0.18.2",
@@ -79,7 +76,6 @@
     "@lumirelle/tsconfig": "file:.",
     "@types/bun": "catalog:types",
     "bumpp": "catalog:dev",
-    "bunup": "catalog:build",
     "eslint": "catalog:check",
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
