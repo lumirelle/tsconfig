@@ -123,9 +123,9 @@ For more details, you can refer to [lumirelle/lumirelle.me](https://github.com/l
        // Only include types you need, if you are using Vite, you can leave below as is, otherwise, please replace "vite/client" with the types you need.
        "types": ["vite/client"]
      },
-     // Only include your project's source files and their tests, not the config files, e.g. `vite.config.ts`.
-     "include": ["src/**/*", "test/**/*"],
-     "exclude": ["test/fixture/**/*"]
+     // Only include your project's source files and their tests, not the config files, e.g. `knip.config.ts`.
+     // `vite.config.ts` is required for provide vite client types, you can remove it if you are not using Vite.
+     "include": ["*.d.ts", "vite.config.ts", "src/**/*"]
    }
    ```
 
