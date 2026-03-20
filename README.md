@@ -34,6 +34,47 @@ For monorepo with TypeScript project references, please refer to [lumirelle/star
 
 For _Vue_ applications.
 
+Specially, this config [limits the language level to **ES2022**](https://github.com/vuejs/tsconfig/blob/main/tsconfig.dom.json#L11). For test code, or some cli scripts we may have within the application projects, they may expect to use the `@lumirelle/tsconfig/lib` config. In this case, we can also achieve this by _TypeScript_ project references with explicit `include` and `exclude` fields, for example:
+
+_tsconfig.app.json_
+
+```json
+{
+  "extends": "@lumirelle/tsconfig/vue",
+  "compilerOptions": {
+    // ...
+  },
+  "include": ["src/**/*"]
+}
+```
+
+_tsconfig.node.json_
+
+```json
+{
+  "extends": "@lumirelle/tsconfig/lib",
+  "compilerOptions": {
+    // ...
+  },
+  "include": ["scripts/**/*", "test/**/*"],
+  "exclude": ["test/fixture/**/*"]
+}
+```
+
+_tsconfig.json_
+
+```json
+{
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "files": []
+}
+```
+
+For more details, you can refer to [lumirelle/lumirelle.me](https://github.com/lumirelle/lumirelle.me/tree/main/tsconfig.json).
+
 ## Usage
 
 1. Install the package:
