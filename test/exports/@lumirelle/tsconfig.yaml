@@ -1,5 +1,4 @@
-./lib: 
-  compilerOptions: object
+./ts: 
   default: object
   extends: string
 ./vue: 
