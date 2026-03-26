@@ -28,56 +28,15 @@ In order to get better DX and UX, we need to have a good `tsconfig.json` config,
 
 ## Configuration
 
-### [`@lumirelle/tsconfig/lib`](tsconfig.lib.json)
+### [`@lumirelle/tsconfig/ts`](tsconfig.ts.json)
 
-For _TypeScript_ libraries.
-
-For monorepo with TypeScript project references, please refer to [lumirelle/starter-monorepo](https://github.com/lumirelle/starter-monorepo/tree/main/tsconfig.json).
+For _JavaScript / TypeScript_ files.
 
 ### [`@lumirelle/tsconfig/vue`](tsconfig.vue.json)
 
-For _Vue_ applications.
+For _Vue_ files.
 
-Specially, this config [limits the language level to **ES2022**](https://github.com/vuejs/tsconfig/blob/main/tsconfig.dom.json#L11). For test code, or some cli scripts we may have within the application projects, they may expect to use the `@lumirelle/tsconfig/lib` config. In this case, we can also achieve this by _TypeScript_ project references with explicit `include` and `exclude` fields, for example:
-
-_tsconfig.app.json_
-
-```json
-{
-  "extends": "@lumirelle/tsconfig/vue",
-  "compilerOptions": {
-    // ...
-  },
-  "include": ["src/**/*"]
-}
-```
-
-_tsconfig.node.json_
-
-```json
-{
-  "extends": "@lumirelle/tsconfig/lib",
-  "compilerOptions": {
-    // ...
-  },
-  "include": ["scripts/**/*", "test/**/*"],
-  "exclude": ["test/fixture/**/*"]
-}
-```
-
-_tsconfig.json_
-
-```json
-{
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
-  "files": []
-}
-```
-
-For more details, you can refer to [lumirelle/lumirelle.me](https://github.com/lumirelle/lumirelle.me/tree/main/tsconfig.json).
+Specially, this config [limits the language level to **ES2022**](https://github.com/vuejs/tsconfig/blob/main/tsconfig.dom.json#L11).
 
 ## Usage
 
@@ -132,6 +91,16 @@ For more details, you can refer to [lumirelle/lumirelle.me](https://github.com/l
      "include": ["*.d.ts", "vite.config.ts", "src/**/*"]
    }
    ```
+
+## Examples
+
+You can find example projects using this config in the [example](./example) directory.
+
+Or see the real-world usage:
+
+- TypeScript library project: [lumirelle/starter-ts](https://github.com/lumirelle/starter-ts)
+- TypeScript monorepo library project: [lumirelle/starship-butler](https://github.com/lumirelle/starship-butler) & [lumirelle/starter-monorepo](https://github.com/lumirelle/starter-monorepo)
+- Vue application project: [lumirelle/lumirelle.me](https://github.com/lumirelle/lumirelle.me)
 
 ## Sponsors
 

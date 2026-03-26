@@ -15,13 +15,13 @@
   "bugs": "https://github.com/lumirelle/tsconfig/issues",
   "keywords": [],
   "exports": {
-    "./lib": "./tsconfig.lib.json",
+    "./ts": "./tsconfig.ts.json",
     "./vue": "./tsconfig.vue.json",
     "./package.json": "./package.json"
   },
   "files": [
     "internal",
-    "tsconfig.lib.json",
+    "tsconfig.ts.json",
     "tsconfig.vue.json"
   ],
   "workspaces": {
