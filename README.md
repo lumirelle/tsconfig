@@ -7,6 +7,10 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
+> [!Caution]
+>
+> Since `0.1.0`, this package only supports _TypeScript_ 6.0 and above, if you are using older versions of _TypeScript_, please use `0.0.x` versions.
+
 Lumirelle's opinionated _TypeScript_ config.
 
 ## Motivation

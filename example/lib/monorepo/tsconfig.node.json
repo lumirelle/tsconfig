@@ -4,8 +4,7 @@
     // Include types you need, if you are using Node.js, please replace "bun" with "node".
     "types": ["bun"]
   },
-  // Only include your project's scripts, test files & config files who are expected to run / used in the Node.js environment, e.g. `knip.config.ts`.
-  //
+  // Only include your project's script files, test files & config files who are expected to run without `isolatedDeclarations`, e.g. `scripts/do-sth.ts` & `knip.config.ts`.
   "include": ["scripts/**/*", "test/**/*", "*.config.ts"],
-  "exclude": ["test/fixture/**/*", "!vite.config.ts"]
+  "exclude": ["test/fixture/**/*"]
 }

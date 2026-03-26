@@ -69,6 +69,9 @@
     "prerelease": "bun run --parallel check test",
     "release": "bumpp"
   },
+  "peerDependencies": {
+    "typescript": ">= 6.0.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
     "@arethetypeswrong/cli": "catalog:check",

@@ -1,0 +1,12 @@
+{
+  "extends": "@lumirelle/tsconfig/lib",
+  "compilerOptions": {
+    // Include types you need, if you are using Node.js, please replace "bun" with "node".
+    "types": ["bun"],
+    // Enable isolated declarations to speed up type checking & generation
+    "declaration": true,
+    "isolatedDeclarations": true
+  },
+  // Only include your project's source files who are expected to run with `isolatedDeclarations`, not the script files or config files, e.g. `scripts/do-sth.ts` & `knip.config.ts`.
+  "include": ["src/**/*"]
+}
