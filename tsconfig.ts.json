@@ -1,7 +1,5 @@
 {
   "extends": "./internal/tsconfig.base.json",
   "compilerOptions": {
-    // Allow checking JavaScript files
-    "allowJs": true
   }
 }
