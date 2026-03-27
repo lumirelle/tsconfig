@@ -5,6 +5,6 @@
     // Include types you need, if you are using Node.js, please replace "bun" with "node".
     "types": ["bun"]
   },
-  // Only include your project's script files & config files who are expected to run without `isolatedDeclarations`.
+  // Only include your project's scripts & config files who are expected to run / used in the Node.js environment.
   "include": ["scripts/**/*", "*.config.js", "*.config.ts"]
 }
