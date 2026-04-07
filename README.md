@@ -94,7 +94,7 @@ Specially, this config [limits the language level to **ES2022**](https://github.
 
 ## Examples
 
-You can find example projects using this config in the [example](./example) directory.
+You can find example projects using this config in the [examples](./examples) directory.
 
 Or see the real-world usage:
 

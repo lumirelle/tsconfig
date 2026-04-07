@@ -1,8 +1,0 @@
-./ts: 
-  compilerOptions: object
-  default: object
-  extends: string
-./vue: 
-  compilerOptions: object
-  default: object
-  extends: string
