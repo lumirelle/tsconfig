@@ -5,5 +5,5 @@
     "allowJs": true
   },
   "include": ["scripts/**/*", "test/**/*", "*.config.js", "*.config.ts"],
-  "exclude": ["test/fixture/**/*"]
+  "exclude": ["test/fixtures/**/*"]
 }
