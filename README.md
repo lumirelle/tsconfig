@@ -40,7 +40,7 @@ Specially, this config [limits the language level to **ES2022**](https://github.
 
 ## Usage
 
-1. Install the package:
+1. Install the package (and referenced types you need):
 
    ```bash
    # @antfu/ni
@@ -50,6 +50,12 @@ Specially, this config [limits the language level to **ES2022**](https://github.
    # npm
    npm install -D @lumirelle/tsconfig
    # ...
+
+   # Referenced types, for example, if you are using Bun:
+   ni -D bun-types @types/node
+   # Or Node.js:
+   ni -D @types/node
+   # Or else...
    ```
 
 2. Extend the config in your `tsconfig.json`:
@@ -60,15 +66,15 @@ Specially, this config [limits the language level to **ES2022**](https://github.
    {
      "extends": "@lumirelle/tsconfig/lib",
      "compilerOptions": {
-       // Only include types you need, if you are using Node.js, please replace "bun" with "node".
-       "types": ["bun"],
+       // Only include types you need, if you are using Node.js, please replace "bun-types" with "node".
+       "types": ["bun-types"],
        // Enable isolated declarations to speed up type checking & generation
        "declaration": true,
        "isolatedDeclarations": true
      },
      // Only include your project's source files and their tests, not the config files, e.g. `vite.config.ts`.
      "include": ["src/**/*", "test/**/*"],
-     "exclude": ["test/fixture/**/*"]
+     "exclude": ["test/fixtures/**/*"]
    }
    ```
 
