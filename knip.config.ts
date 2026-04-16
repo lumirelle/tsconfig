@@ -4,5 +4,5 @@ export default {
   /// keep-sorted
   ignoreDependencies: ['@arethetypeswrong/cli', '@lumirelle/oxlint-config', 'publint', 'vue'],
   /// keep-sorted
-  ignoreFiles: ['test/fixture/**'],
+  ignoreFiles: ['test/fixtures/**'],
 } satisfies KnipConfig
