@@ -8,6 +8,7 @@ describe('tsconfig', () => {
     expect(baseTsConfig).toMatchInlineSnapshot(`
       {
         "compilerOptions": {
+          "allowArbitraryExtensions": true,
           "allowImportingTsExtensions": true,
           "lib": [
             "ESNext",
@@ -39,6 +40,7 @@ describe('tsconfig', () => {
     expect(vueTsConfig).toMatchInlineSnapshot(`
       {
         "compilerOptions": {
+          "jsx": "preserve",
           "jsxImportSource": "vue",
           "lib": [
             "ES2022",
