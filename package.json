@@ -29,7 +29,6 @@
     "catalogs": {
       "dev": {
         "bumpp": "^11.1.0",
-        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657",
         "typescript": "^6.0.3",
         "vue": "^3.5.34"
       },
@@ -47,7 +46,8 @@
         "nano-staged": "^1.0.2",
         "oxlint": "^1.63.0",
         "oxlint-tsgolint": "^0.22.1",
-        "publint": "^0.3.20"
+        "publint": "^0.3.20",
+        "simple-git-hooks": "git+https://github.com/toplenboren/simple-git-hooks.git#7625657"
       }
     }
   },
@@ -84,7 +84,7 @@
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "publint": "catalog:check",
-    "simple-git-hooks": "catalog:dev",
+    "simple-git-hooks": "catalog:check",
     "typescript": "catalog:dev",
     "vue": "catalog:dev"
   },

@@ -1,6 +1,7 @@
 {
   "extends": "./internal/tsconfig.base.json",
   "compilerOptions": {
+    "jsx": "preserve",
     "jsxImportSource": "vue",
     "lib": [
       // Target ES2022 to align with Vite.

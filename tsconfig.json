@@ -4,6 +4,6 @@
     "types": ["bun-types"],
     "allowJs": true
   },
-  "include": ["scripts/**/*", "test/**/*", "*.js", "*.ts"],
+  "include": ["scripts/**/*", "test/**/*", "*.config.js", "*.config.ts"],
   "exclude": ["test/fixtures/**/*"]
 }
