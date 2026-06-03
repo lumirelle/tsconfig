@@ -1,6 +1,7 @@
 import type { KnipConfig } from 'knip'
 
 export default {
-  ignoreDependencies: ['@arethetypeswrong/cli', '@lumirelle/oxlint-config', 'publint', 'vue'],
-  ignoreFiles: ['test/fixtures/**'],
+  entry: ['test/**/*.{js,ts}'],
+  ignoreBinaries: ['mise'],
+  ignoreDependencies: ['@arethetypeswrong/cli', '@lumirelle/oxlint-config', 'publint', 'bumpp'],
 } satisfies KnipConfig
