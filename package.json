@@ -56,17 +56,7 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "simple-git-hooks",
-    "start": "bun run ./src/index.ts",
-    "lint": "bun run --parallel oxlint eslint",
-    "lint:fix": "oxlint --fix && eslint --fix",
-    "unused": "knip-bun",
-    "pubcheck": "bun run --parallel 'attw --pack --profile esm-only' publint",
-    "gitcheck": "bun run ./scripts/check-git-status.sh",
-    "check": "bun run --parallel lint unused pubcheck gitcheck",
-    "test": "bun test",
-    "prerelease": "bun run --parallel check test",
-    "release": "bumpp"
+    "prepare": "mise run prepare"
   },
   "peerDependencies": {
     "typescript": ">=6.0.2"
