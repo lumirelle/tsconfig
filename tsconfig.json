@@ -1,7 +1,7 @@
 {
   "extends": "@lumirelle/tsconfig/ts",
   "compilerOptions": {
-    "types": ["bun-types"],
+    "types": ["bun"],
     "allowJs": true
   },
   "include": ["scripts/**/*", "test/**/*", "*.config.js", "*.config.ts"],
