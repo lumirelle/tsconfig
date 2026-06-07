@@ -58,4 +58,4 @@ raw = true
 run = "aube publish --access public --tag latest"
 
 [tasks."publish:commit"]
-run = "aubx pkg-pr-new --bun"
+run = "aubx pkg-pr-new publish --bun"
