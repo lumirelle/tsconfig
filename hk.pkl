@@ -21,10 +21,10 @@ local linters = new Mapping<String, Step> {
     }
 
     ["attw"] {
-      check = "aubx @arethetypeswrong/cli --pack --profile esm-only"
+      check = "attw --pack --profile esm-only"
     }
     ["publint"] {
-      check = "aubx publint"
+      check = "publint"
     }
 }
 

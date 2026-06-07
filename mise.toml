@@ -6,6 +6,8 @@ bun = "latest"
 aube = "latest"
 pkl = "latest"
 hk = "latest"
+"npm:@arethetypeswrong/cli" = "latest"
+"npm:publint" = "latest"
 
 [hooks]
 enter = "hk install"
