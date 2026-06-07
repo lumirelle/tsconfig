@@ -33,7 +33,6 @@
     "packages": [],
     "catalogs": {
       "dev": {
-        "bumpp": "^11.1.0",
         "typescript": "^6.0.3",
         "vue": "^3.5.35"
       },
@@ -42,15 +41,13 @@
       },
       "check": {
         "@antfu/eslint-config": "^9.0.0",
-        "@arethetypeswrong/cli": "^0.18.3",
         "@lumirelle/oxlint-config": "^0.7.0",
         "eslint": "^10.4.1",
         "eslint-plugin-oxlint": "^1.68.0",
         "knip": "^6.16.0",
         "nano-staged": "^1.0.2",
         "oxlint": "^1.68.0",
-        "oxlint-tsgolint": "^0.23.0",
-        "publint": "^0.3.21"
+        "oxlint-tsgolint": "^0.23.0"
       },
       "test": {
         "@vitest/coverage-v8": "^4.1.8",
@@ -61,34 +58,20 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepare": "mise run prepare",
-    "oxlint": "oxlint --config .oxlintrc.json",
-    "eslint": "eslint",
-    "unused": "knip-bun",
-    "attw": "attw --pack --profile esm-only",
-    "publint": "publint",
-    "test:watch": "vitest",
-    "test": "vitest run",
-    "release": "bumpp"
-  },
   "peerDependencies": {
     "typescript": ">=6.0.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:check",
-    "@arethetypeswrong/cli": "catalog:check",
     "@lumirelle/oxlint-config": "catalog:check",
     "@types/bun": "catalog:types",
     "@vitest/coverage-v8": "catalog:test",
-    "bumpp": "catalog:dev",
     "eslint": "catalog:check",
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
     "nano-staged": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
-    "publint": "catalog:check",
     "typescript": "catalog:dev",
     "vitest": "catalog:test",
     "vue": "catalog:dev"

@@ -4,78 +4,44 @@ _.path = [ "./node_modules/.bin" ]
 [tools]
 bun = "latest"
 aube = "latest"
+pkl = "latest"
+hk = "latest"
 
-[tasks.prepare]
-run = "mise generate git-pre-commit --write"
+[hooks]
+enter = "hk install"
+
+[deps.auto-aube]
+sources = [
+  "package.json",
+  "bun.lock"
+]
+outputs = [ "node_modules/" ]
+run = "aube install"
+auto = true
 
 [tasks.pre-commit]
-run = "nano-staged"
+run = "hk run pre-commit"
 
 [tasks.dev]
-run = { task = "lint" }
+run = { task = "check" }
 
 [tasks.build]
-run = { task = "lint" }
+run = { task = "check" }
 
 [tasks.start]
-run = { task = "lint" }
-
-[tasks.lint]
-run = [
-  "aubr oxlint",
-  "aubr eslint"
-]
-
-[tasks."lint:fix"]
-run = [
-  "aubr oxlint --fix",
-  "aubr eslint --fix"
-]
-
-[tasks.unused]
-run = "aubr unused"
-
-# In order to running attw and publint parallely,
-# we need to split them into separate tasks,
-# and then create a parent task to run them together.
-[tasks.attw]
-run = "aubr attw"
-hide = true
-
-[tasks.publint]
-run = "aubr publint"
-hide = true
-
-[tasks.pubcheck]
-run = { tasks = [
-  "attw",
-  "publint"
-] }
-
-[tasks.gitcheck]
-run = """
-#!/bin/bash
-if [[ -z "$(git status --porcelain)" ]]; then
-  echo "✅ Git repo is clean."
-else
-  echo "🔴 Git repo is dirty. Aborting."
-  exit 1
-fi
-"""
+run = { task = "check" }
 
 [tasks.check]
-run = { tasks = [
-  "lint",
-  "unused",
-  "pubcheck",
-  "gitcheck"
-] }
+run = "hk check --all"
+
+[tasks.fix]
+run = "hk fix --all"
 
 [tasks."test:watch"]
-run = "aubr test:watch"
+run = "vitest"
 
 [tasks.test]
-run = "aubr test"
+run = "vitest run"
 
 [tasks.prerelease]
 run = { tasks = [
@@ -85,5 +51,11 @@ run = { tasks = [
 
 [tasks.release]
 depends = "prerelease"
-run = "aubr release"
+run = "aubx bumpp"
 raw = true
+
+[tasks.publish]
+run = "aube publish --access public --tag latest"
+
+[tasks."publish:release"]
+run = "aubx pkg-pr-new --bun"
