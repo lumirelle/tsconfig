@@ -29,6 +29,8 @@ local linters = new Mapping<String, Step> {
         "*.yml",
         // TOML
         "*.toml",
+        // Vue
+        "*.vue",
       )
     depends = List("oxlint")
   }
