@@ -14,6 +14,8 @@ local eslint_support_filetypes = {
   "yaml",
   -- TOML
   "toml",
+  -- Vue
+  "vue",
 }
 local eslint_support_file_patterns = {
   -- JS & TS
@@ -37,6 +39,8 @@ local eslint_support_file_patterns = {
   "*.yml",
   -- TOML
   "*.toml",
+  -- Vue
+  "*.vue",
 }
 -- Disable other formatter conflict with ESLint
 require("snacks").util.lsp.on(function(_, client)
