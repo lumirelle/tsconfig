@@ -2,7 +2,7 @@
   "name": "@lumirelle/tsconfig",
   "type": "module",
   "version": "0.1.4",
-  "packageManager": "aube@1.17.1",
+  "packageManager": "aube@1.21.0",
   "description": "Lumirelle's opinionated TypeScript config",
   "author": "Lumirelle <shabbyacc@outlook.com>",
   "license": "MIT",
@@ -33,6 +33,7 @@
     "packages": [],
     "catalogs": {
       "dev": {
+        "taze": "^19.14.1",
         "typescript": "^6.0.3",
         "vue": "^3.5.35"
       },
@@ -70,6 +71,7 @@
     "knip": "catalog:check",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
+    "taze": "catalog:dev",
     "typescript": "catalog:dev",
     "vitest": "catalog:test",
     "vue": "catalog:dev"

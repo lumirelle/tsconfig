@@ -2,5 +2,6 @@ import type { KnipConfig } from 'knip'
 
 export default {
   entry: ['test/**/*.{js,ts}'],
-  ignoreDependencies: ['@lumirelle/oxlint-config'],
+  ignoreFiles: ['taze.config.ts'],
+  ignoreDependencies: ['@lumirelle/oxlint-config', 'taze'],
 } satisfies KnipConfig
