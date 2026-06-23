@@ -8,7 +8,7 @@
     "declaration": true,
     "isolatedDeclarations": true
   },
-  // Only include your project's source files who are expected to run with `isolatedDeclarations`, also test files who are related to source files.
+  // Only include your project's source files who are expected to run with `isolatedDeclarations` and use Node.js API types, also test files who are related to source files.
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["test/fixtures/**/*"]
 }
