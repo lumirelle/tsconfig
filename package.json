@@ -1,7 +1,7 @@
 {
   "name": "@lumirelle/tsconfig",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "packageManager": "aube@1.22.0",
   "description": "Lumirelle's opinionated TypeScript config",
   "author": "Lumirelle <shabbyacc@outlook.com>",
