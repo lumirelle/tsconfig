@@ -25,5 +25,6 @@ export default {
     'bumpp',
     'changelogithub',
     'pkg-pr-new',
+    'npm',
   ],
 } satisfies KnipConfig

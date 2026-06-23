@@ -59,6 +59,7 @@
       "release": {
         "bumpp": "^11.1.0",
         "changelogithub": "^14.0.0",
+        "npm": "^11.17.0",
         "pkg-pr-new": "^0.0.75"
       }
     }
@@ -80,6 +81,7 @@
     "eslint": "catalog:check",
     "eslint-plugin-oxlint": "catalog:check",
     "knip": "catalog:check",
+    "npm": "catalog:release",
     "oxlint": "catalog:check",
     "oxlint-tsgolint": "catalog:check",
     "pkg-pr-new": "catalog:release",

@@ -50,14 +50,15 @@ local linters = new Mapping<String, Step> {
     depends = List("oxlint")
   }
   ["tsc"] = (Builtins.tsc) {
-    glob = List("tsconfig.json", "test/fixtures/**/tsconfig.json")
+    glob = List("**/*.ts", "**/*.tsx", "**/*.vue")
     check = "vue-tsc --noEmit --project {{workspace_indicator}}"
   }
 
   // Unused
   ["knip"] = (Builtins.knip) {
     check = "knip-bun --no-progress --directory {{workspace}}"
-    fix = "knip-bun --fix --no-progress --directory {{workspace}}"
+    // Disable knip auto-fix, because it's dangerous
+    fix = null
   }
 
   // Publishing
