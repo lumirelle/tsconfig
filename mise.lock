@@ -154,6 +154,43 @@ checksum = "sha256:19055e34af501a3cb7568b55f31ea4f0e38760d518b79e17d71fdd39ba088
 url = "https://github.com/jdx/hk/releases/download/v1.50.0/hk-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/jdx/hk/releases/assets/468492725"
 
+[[tools.node]]
+version = "24.18.0"
+backend = "core:node"
+
+[tools.node."platforms.linux-arm64"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-arm64.tar.gz"
+
+[tools.node."platforms.linux-arm64-musl"]
+url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-arm64-musl.tar.gz"
+
+[tools.node."platforms.linux-x64"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.gz"
+
+[tools.node."platforms.linux-x64-baseline"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-linux-x64.tar.gz"
+
+[tools.node."platforms.linux-x64-musl"]
+url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64-musl.tar.gz"
+
+[tools.node."platforms.linux-x64-musl-baseline"]
+url = "https://unofficial-builds.nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64-musl.tar.gz"
+
+[tools.node."platforms.macos-arm64"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-arm64.tar.gz"
+
+[tools.node."platforms.macos-x64"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-x64.tar.gz"
+
+[tools.node."platforms.macos-x64-baseline"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-darwin-x64.tar.gz"
+
+[tools.node."platforms.windows-x64"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip"
+
+[tools.node."platforms.windows-x64-baseline"]
+url = "https://nodejs.org/dist/v24.18.0/node-v24.18.0-win-x64.zip"
+
 [[tools.pkl]]
 version = "0.32.0"
 backend = "aqua:apple/pkl"
