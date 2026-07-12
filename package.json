@@ -42,12 +42,12 @@
       },
       "check": {
         "@antfu/eslint-config": "^9.1.0",
-        "@arethetypeswrong/cli": "^0.18.4",
-        "@lumirelle/oxlint-config": "^0.11.0",
-        "eslint": "^10.6.0",
-        "eslint-plugin-oxlint": "^1.72.0",
+        "@arethetypeswrong/cli": "^0.18.5",
+        "@lumirelle/oxlint-config": "^0.12.0",
+        "eslint": "^10.7.0",
+        "eslint-plugin-oxlint": "^1.73.0",
         "knip": "^6.24.0",
-        "oxlint": "^1.72.0",
+        "oxlint": "^1.73.0",
         "oxlint-tsgolint": "^0.24.0",
         "publint": "^0.3.21",
         "vue-tsc": "^3.3.6"
