@@ -1,24 +1,21 @@
-[env]
-_.path = ["./node_modules/.bin"]
-
 [tools]
 # Environments
-bun = "1.3.14"
-aube = "1.26.0"
+node = "latest"
+'github:nubjs/nub' = 'latest'
 # Linters & Formatters
-hk = "1.50.0"
-stylua = "2.5.2"
-pkl = "0.32.0"
-node = "24"
+hk = 'latest'
+stylua = 'latest'
+pkl = 'latest'
 
-[deps.bun-aube]
-description = "Automatically install dependencies via aube & bun's lockfile."
-sources = ["package.json", "bun.lock"]
-outputs = ["node_modules/"]
-# Because aube's output lockfile has bugs,
-# we use `bun install --lockfile-only` to generate a lockfile
-run = "bun install --lockfile-only && aube install"
+[deps.nub]
+description = 'Automatically install Node.js dependencies via nub.'
+sources = ['package.json', 'nub.lock']
+outputs = ['node_modules/']
+run = 'nub install'
 auto = true
+
+[env]
+_.path = ['{{config_root}}/node_modules/.bin']
 
 [tasks.dev]
 run = { task = "check" }
@@ -30,33 +27,54 @@ run = { task = "check" }
 run = { task = "check" }
 
 [tasks.check]
-run = "hk check --all"
+description = 'Run all checks.'
+usage = '''
+flag "-s --staged" help="Run on staged files only without stashing unstaged changes"
+'''
+run = '''
+hk check {{ "--staged" if usage.staged else "--all" }}
+'''
 
 [tasks.fix]
-run = "hk fix --all"
+description = 'Fix all check issues.'
+usage = '''
+flag "-s --staged" help="Run on staged files only without stashing unstaged changes"
+'''
+run = '''
+hk fix {{ "--staged" if usage.staged else "--all" }}
+'''
 
 [tasks."test:watch"]
 run = "vitest"
 
 [tasks.test]
-run = "vitest run"
+description = "Run tests."
+usage = '''
+flag "-w --watch" help="Watch files for changes and rerun tests"
+'''
+run = '''
+vitest {{ '' if usage.watch else 'run' }}
+'''
 
 [tasks.prerelease]
+description = 'Prepare for release.'
+# All tasks in parallel.
 run = { tasks = ["check", "test"] }
 
 [tasks.release]
+description = 'Bump the version and push new version of this workflow with a Git tag.'
 depends = "prerelease"
 run = "bumpp"
 raw = true
 
 [tasks.changelog]
+description = 'Generate GitHub changelog.'
 run = "changelogithub"
 
 [tasks.publish]
-run = [
-  "bun pm pack --filename release.tgz",
-  "npm publish ./release.tgz --access public --tag latest",
-]
+description = 'Publish the package.'
+run = "nub publish --provenance"
 
-[tasks."publish:commit"]
+[tasks.publish-commit]
+description = 'Publish the committed changes.'
 run = "pkg-pr-new publish --bun"
