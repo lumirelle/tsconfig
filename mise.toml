@@ -77,4 +77,4 @@ run = "nub publish --provenance"
 
 [tasks.publish-commit]
 description = 'Publish the committed changes.'
-run = "pkg-pr-new publish --bun"
+run = "pkg-pr-new publish"
