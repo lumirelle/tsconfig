@@ -51,9 +51,10 @@ run = "vitest"
 description = "Run tests."
 usage = '''
 flag "-w --watch" help="Watch files for changes and rerun tests"
+arg "[rest]" var=#true help="Additional arguments to pass to the test runner"
 '''
 run = '''
-vitest {{ '' if usage.watch else 'run' }}
+vitest {{ '' if usage.watch else 'run' }} {{ usage.rest | join(sep=' ') if usage.rest else '' }}
 '''
 
 [tasks.prerelease]
