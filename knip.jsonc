@@ -1,5 +1,4 @@
 {
-  "$schema": "https://unpkg.com/knip@6/schema.json",
   "ignoreFiles": [
     // Test fixtures
     "test/fixtures/**"
@@ -17,7 +16,6 @@
     // Node.js releasing tools
     "bumpp",
     "changelogithub",
-    "pkg-pr-new",
-    "npm"
+    "pkg-pr-new"
   ]
 }
