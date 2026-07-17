@@ -47,9 +47,6 @@ run = '''
 hk fix {{ "--staged" if usage.staged else "--all" }}
 '''
 
-[tasks."test:watch"]
-run = "vitest"
-
 [tasks.test]
 description = "Run tests."
 usage = '''
