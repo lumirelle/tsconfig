@@ -25,6 +25,13 @@
     "tsconfig.ts.json",
     "tsconfig.vue.json"
   ],
+  "devEngines": {
+    "packageManager": {
+      "name": "nub",
+      "version": "^0.4.12",
+      "onFail": "warn"
+    }
+  },
   "engines": {
     "node": ">22",
     "bun": ">1"
@@ -55,12 +62,5 @@
     "vitest": "^4.1.10",
     "vue": "^3.5.40",
     "vue-tsc": "^3.3.7"
-  },
-  "devEngines": {
-    "packageManager": {
-      "name": "nub",
-      "version": "^0.4.12",
-      "onFail": "warn"
-    }
   }
 }
