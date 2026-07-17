@@ -43,8 +43,8 @@ Specially, this config assumes you are using [Vite](https://vitejs.dev/) to buil
 1. Install this package (also install the referenced types you may need):
 
     ```bash
-    # aube, https://aube.en.dev/
-    aube add -D @lumirelle/tsconfig
+    # nub, https://nubjs.com/
+    nub add -D @lumirelle/tsconfig
     # pnpm
     pnpm add -D @lumirelle/tsconfig
     # npm
@@ -52,11 +52,9 @@ Specially, this config assumes you are using [Vite](https://vitejs.dev/) to buil
     # ...
 
     # Referenced types
-    # For example, if you are building a Node.js compatible package on top of Bun:
-    aube add -D @types/bun @types/node
-    # Or just a Node.js based package:
-    aube add -D @types/node
-    # Or else...
+    # For example, if you are building a Node.js package:
+    nub add -D @types/node
+    # ...Or else
     ```
 
 2. Extend this config in your `tsconfig.json`:
@@ -103,8 +101,8 @@ Specially, this config assumes you are using [Vite](https://vitejs.dev/) to buil
       "extends": "@lumirelle/tsconfig/ts",
       "compilerOptions": {
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-        // To get the benefits of your runtime, we use runtime-specific API types here. For example, we currently use Bun as development runtime, so we use Bun API types here. You can replace it with "node" if you are using Node.js.
-        "types": ["bun"],
+        // To get the benefits of your runtime, we use runtime-specific API types here.
+        "types": ["node"],
         // Allow importing JavaScript files
         "allowJs": true
       },
@@ -158,8 +156,8 @@ Specially, this config assumes you are using [Vite](https://vitejs.dev/) to buil
       "extends": "@lumirelle/tsconfig/ts",
       "compilerOptions": {
         "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-        // To get the benefits of your runtime, we use runtime-specific API types here. For example, we currently use Bun as development runtime, so we use Bun API types here. You can replace it with "node" if you are using Node.js.
-        "types": ["bun"],
+        // To get the benefits of your runtime, we use runtime-specific API types here.
+        "types": ["node"],
         // Allow importing JavaScript files
         "allowJs": true
       },

@@ -2,8 +2,8 @@
   "extends": "@lumirelle/tsconfig/ts",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    // To get the benefits of your runtime, we use runtime-specific API types here. For example, we currently use Bun as development runtime, so we use Bun API types here. You can replace it with "node" if you are using Node.js.
-    "types": ["bun"],
+    // To get the benefits of your runtime, we use runtime-specific API types here.
+    "types": ["node"],
     // Allow importing JavaScript files
     "allowJs": true
   },
