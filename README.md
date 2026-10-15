@@ -173,7 +173,7 @@ You can find example projects using this config in the [examples](./examples) di
 Or see the real-world usage:
 
 - TypeScript library project: [lumirelle/starter-ts](https://github.com/lumirelle/starter-ts)
-- TypeScript monorepo library project: [lumirelle/starship-butler](https://github.com/lumirelle/starship-butler) & [lumirelle/starter-monorepo](https://github.com/lumirelle/starter-monorepo)
+- TypeScript monorepo library project: [lumirelle/starter-monorepo](https://github.com/lumirelle/starter-monorepo)
 - Vue application project: [lumirelle/lumirelle.me](https://github.com/lumirelle/lumirelle.me)
 
 ## Sponsors
