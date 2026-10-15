@@ -2,7 +2,7 @@
   "name": "@lumirelle/tsconfig",
   "type": "module",
   "version": "0.1.6",
-  "packageManager": "nub@0.7.5",
+  "packageManager": "nub@0.9.6",
   "description": "Lumirelle's opinionated TypeScript config",
   "author": "Lumirelle <shabbyacc@outlook.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
   "devEngines": {
     "packageManager": {
       "name": "nub",
-      "version": "^0.7.5",
+      "version": "^0.9.6",
       "onFail": "ignore"
     }
   },
