@@ -20,7 +20,7 @@ steps {
         "**/*.tsx",
         "**/*.vue",
         // Configurations
-        "*.json",
+        "**/*.json",
         "**/*.json5",
         "**/*.jsonc",
         "**/*.yaml",
