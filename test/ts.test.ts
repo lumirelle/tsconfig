@@ -9,8 +9,7 @@ describe('ts tsconfig', () => {
     expect(ts).toMatchInlineSnapshot(`
       "{
         "extends": "./internal/tsconfig.base.json",
-        "compilerOptions": {
-        }
+        "compilerOptions": {}
       }
       "
     `)

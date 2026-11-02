@@ -23,7 +23,27 @@ KNIP_DISABLE_RAW_TRANSFER = 1
 [task_config.input_groups]
 deps = ["package.json", "nub.lock"]
 src = ["internal", "tsconfig.*.json"]
-check = ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.ts", "*.mts", "*.cts", "*.tsx", "*.vue", "*.json", "*.jsonc", "*.yaml", "*.yml", "*.toml", "*.md", "*.mdc", "*.mdx", "*.lua", "hk.pkl"]
+check = [
+  "**/*.js",
+  "**/*.mjs",
+  "**/*.cjs",
+  "**/*.jsx",
+  "**/*.ts",
+  "**/*.mts",
+  "**/*.cts",
+  "**/*.tsx",
+  "**/*.vue",
+  "**/*.json",
+  "**/*.jsonc",
+  "**/*.yaml",
+  "**/*.yml",
+  "**/*.toml",
+  "**/*.md",
+  "**/*.mdc",
+  "**/*.mdx",
+  "**/*.lua",
+  "hk.pkl",
+]
 test = ["test"]
 
 [tasks.dev]

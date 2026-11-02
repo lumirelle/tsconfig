@@ -42,129 +42,123 @@ Specially, this config assumes you are using [Vite](https://vitejs.dev/) to buil
 
 1. Install this package (also install the referenced types you may need):
 
-    ```bash
-    # nub, https://nubjs.com/
-    nub add -D @lumirelle/tsconfig
-    # pnpm
-    pnpm add -D @lumirelle/tsconfig
-    # npm
-    npm install -D @lumirelle/tsconfig
-    # ...
+   ```bash
+   # nub, https://nubjs.com/
+   nub add -D @lumirelle/tsconfig
+   # pnpm
+   pnpm add -D @lumirelle/tsconfig
+   # npm
+   npm install -D @lumirelle/tsconfig
+   # ...
 
-    # Referenced types
-    # For example, if you are building a Node.js package:
-    nub add -D @types/node
-    # ...Or else
-    ```
+   # Referenced types
+   # For example, if you are building a Node.js package:
+   nub add -D @types/node
+   # ...Or else
+   ```
 
 2. Extend this config in your `tsconfig.json`:
 
-    > [!Note]
-    > We highly recommend you to use [TypeScript project references](https://www.typescriptlang.org/tsconfig/#references) to split the TypeScript setup of source files and other project files.
+   > [!Note]
+   > We highly recommend you to use [TypeScript project references](https://www.typescriptlang.org/tsconfig/#references) to split the TypeScript setup of source files and other project files.
 
-    For library projects:
+   For library projects:
 
-    _tsconfig.json_
+   _tsconfig.json_
 
-    ```json
-    {
-      "references": [
-        { "path": "./tsconfig.lib.json" },
-        { "path": "./tsconfig.node.json" }
-      ],
-      "files": []
-    }
-    ```
+   ```json
+   {
+     "references": [{ "path": "./tsconfig.lib.json" }, { "path": "./tsconfig.node.json" }],
+     "files": []
+   }
+   ```
 
-    _tsconfig.lib.json_
+   _tsconfig.lib.json_
 
-    ```json
-    {
-      "extends": "@lumirelle/tsconfig/lib",
-      "compilerOptions": {
-        // To ensure your library's Node.js compatibility, we use Node.js API types in source and test files.
-        "types": ["node"],
-        // Enable isolated declarations to speed up type checking & generation
-        "declaration": true,
-        "isolatedDeclarations": true
-      },
-      // Only include your project's source files who are expected to run with `isolatedDeclarations` and use Node.js API types, also test files who are related to source files.
-      "include": ["src/**/*", "test/**/*"],
-      "exclude": ["test/fixtures/**/*"]
-    }
-    ```
+   ```json
+   {
+     "extends": "@lumirelle/tsconfig/lib",
+     "compilerOptions": {
+       // To ensure your library's Node.js compatibility, we use Node.js API types in source and test files.
+       "types": ["node"],
+       // Enable isolated declarations to speed up type checking & generation
+       "declaration": true,
+       "isolatedDeclarations": true
+     },
+     // Only include your project's source files who are expected to run with `isolatedDeclarations` and use Node.js API types, also test files who are related to source files.
+     "include": ["src/**/*", "test/**/*"],
+     "exclude": ["test/fixtures/**/*"]
+   }
+   ```
 
-    _tsconfig.node.json_
+   _tsconfig.node.json_
 
-    ```json
-    {
-      "extends": "@lumirelle/tsconfig/ts",
-      "compilerOptions": {
-        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-        // To get the benefits of your runtime, we use runtime-specific API types here.
-        "types": ["node"],
-        // Allow importing JavaScript files
-        "allowJs": true
-      },
-      // Your project files others than source & test files who are need type support
-      "include": ["scripts/**/*", "*.ts", "*.js"]
-    }
-    ```
+   ```json
+   {
+     "extends": "@lumirelle/tsconfig/ts",
+     "compilerOptions": {
+       "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+       // To get the benefits of your runtime, we use runtime-specific API types here.
+       "types": ["node"],
+       // Allow importing JavaScript files
+       "allowJs": true
+     },
+     // Your project files others than source & test files who are need type support
+     "include": ["scripts/**/*", "*.ts", "*.js"]
+   }
+   ```
 
-    For Vue application projects:
+   For Vue application projects:
 
-    _tsconfig.json_
+   _tsconfig.json_
 
-    ```json
-    {
-      "references": [
-        { "path": "./tsconfig.app.json" },
-        { "path": "./tsconfig.node.json" }
-      ],
-      "files": []
-    }
-    ```
+   ```json
+   {
+     "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+     "files": []
+   }
+   ```
 
-    _tsconfig.app.json_
+   _tsconfig.app.json_
 
-    ```json
-    {
-      "extends": "@lumirelle/tsconfig/vue",
-      "compilerOptions": {
-        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-        // Please adjust the path aliases to match your bundler's configuration.
-        "paths": {
-          "~": ["./src"],
-          "~/*": ["./src/*"]
-        },
-        // Include types you need.
-        // For example, "vite/client" provides extra types to source files for Vite's `import.meta.env` and `import.meta.hot` API, and more.
-        // Some Vite plugins may also provide extra types to source files, like `vite-svg-loader`, please also include them.
-        // If you are not using Vite, you can change below types as you need.
-        "types": ["vite/client"]
-      },
-      // Only include your project's source files who are expected to run in the browser, also extra types to source files generated by tools (matched by `*.d.ts`), also test files who are related to source files.
-      "include": ["src/**/*", "test/**/*", "*.d.ts"],
-      "exclude": ["test/fixtures/**/*"]
-    }
-    ```
+   ```json
+   {
+     "extends": "@lumirelle/tsconfig/vue",
+     "compilerOptions": {
+       "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+       // Please adjust the path aliases to match your bundler's configuration.
+       "paths": {
+         "~": ["./src"],
+         "~/*": ["./src/*"]
+       },
+       // Include types you need.
+       // For example, "vite/client" provides extra types to source files for Vite's `import.meta.env` and `import.meta.hot` API, and more.
+       // Some Vite plugins may also provide extra types to source files, like `vite-svg-loader`, please also include them.
+       // If you are not using Vite, you can change below types as you need.
+       "types": ["vite/client"]
+     },
+     // Only include your project's source files who are expected to run in the browser, also extra types to source files generated by tools (matched by `*.d.ts`), also test files who are related to source files.
+     "include": ["src/**/*", "test/**/*", "*.d.ts"],
+     "exclude": ["test/fixtures/**/*"]
+   }
+   ```
 
-    _tsconfig.node.json_
+   _tsconfig.node.json_
 
-    ```json
-    {
-      "extends": "@lumirelle/tsconfig/ts",
-      "compilerOptions": {
-        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-        // To get the benefits of your runtime, we use runtime-specific API types here.
-        "types": ["node"],
-        // Allow importing JavaScript files
-        "allowJs": true
-      },
-      // Your project files others than source & test files who are need type support
-      "include": ["scripts/**/*", "*.ts", "*.js"]
-    }
-    ```
+   ```json
+   {
+     "extends": "@lumirelle/tsconfig/ts",
+     "compilerOptions": {
+       "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+       // To get the benefits of your runtime, we use runtime-specific API types here.
+       "types": ["node"],
+       // Allow importing JavaScript files
+       "allowJs": true
+     },
+     // Your project files others than source & test files who are need type support
+     "include": ["scripts/**/*", "*.ts", "*.js"]
+   }
+   ```
 
 ## Examples
 
