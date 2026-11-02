@@ -1,21 +1,17 @@
 {
   "ignoreFiles": [
     // Test fixtures
-    "test/fixtures/**"
+    "test/fixtures/**",
   ],
   "ignoreDependencies": [
     // Quality
-    "@lumirelle/oxlint-config",
     "@arethetypeswrong/cli",
+    "oxfmt",
     "publint",
     "vue-tsc",
     // Test fixtures prerequisites
     "vue",
     // Node.js dependencies manager
     "taze",
-    // Node.js releasing tools
-    "bumpp",
-    "changelogithub",
-    "pkg-pr-new"
-  ]
+  ],
 }
